@@ -1,452 +1,415 @@
-
 <!DOCTYPE html>
-<html lang="en ">
-
+<html lang=en>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hexo || </title>
-    <meta name="author" content="John Doe">
-    <meta name="description" content=" ">
-    <meta name="keywords" content=" ">
-    <link rel="icon" href="/images/avatar.png">
-    <link rel="stylesheet" href="/css/antd.min.css">
-    
-    <link rel="stylesheet" href="/css/maiden-theme.css">
-    
-    <script src="/js/vue.js"></script>
-    <script src="/js/antd.min.js"></script>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Hexo</title>
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-<body>
 
-    <div id="loading"
-        style="height: 100vh; width: 100%; position: fixed;display: flex;z-index: 200; justify-content: space-between;">
-        <div id="loadleft" style="width: 50%;background-color: #ffffff;transition: width 0.6s ease-out;"></div>
-        <div id="loadright" style="width: 50%;background-color: #ffffff;transition: width 0.6s ease-out;"></div>
-        <div
-            style="position: fixed; height: 100vh; width: 100%;display: flex;justify-content: center;align-items: center;">
-            <div id="loadcontent"
-                style="width:400px;height:400px;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px#a3ddfb; text-align:center;opacity:1;transition:opacity 0.3s ease-out;">
-                <div>
-                    <h2>LOADING...</h2>
-                    <p>加载过慢请开启缓存(浏览器默认开启)</p>
-                    <div>
-                        <img src="/dancingkitty.gif" alt="loading">
-                    </div>
-                </div>
-            </div>
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">昵称</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shenzhen, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
         </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
     </div>
-
-    <div id="layout">
-        <transition name="into">
-            <div v-show="show_page" style="display: none;">
-                <div id="menu_show">
-                     
-<nav id="menu">
-    <div class="desktop-menu">
-        <a href="/">
-            <span class="title">Hexo</span>
-        </a>
-        
-        <a target="_blank" rel="noopener" href="https://home.cnblogs.com/u/xue-jie">
-            <span>
-                <a-icon type="home" theme="filled" />
-            </span>
-            <span>home</span>
-        </a>
-        
-        <a href="/about">
-            <span>
-                <a-icon type="Diary" theme="filled" />
-            </span>
-            <span>about</span>
-        </a>
-        
-        <a href="/archives">
-            <span>
-                <a-icon type="Film" theme="filled" />
-            </span>
-            <span>archives</span>
-        </a>
-        
-        <a href="/like/categories">
-            <span>
-                <a-icon type="book" theme="filled" />
-            </span>
-            <span>categories</span>
-        </a>
-        
-        <a href="/like/tags">
-            <span>
-                <a-icon type="tags" theme="filled" />
-            </span>
-            <span>tags</span>
-        </a>
-        
-        <a target="_blank" rel="noopener" href="https://en.korilin.com">
-            <span>
-                <a-icon type="compass" theme="filled" />
-            </span>
-            <span>英文博客</span>
-        </a>
-        
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
     </div>
-
-    <div :class="'phone-menu ' + menu_show" id="phone-menu">
-        <div :class="'title'" @click="menu_show=!menu_show">
-            <span style="margin-right: 10px;">
-                <a-icon type="appstore" theme="filled" />
-            </span>
-            <span>Hexo</span>
-        </div>
-        <div class="items" v-show="menu_show">
-            
-            <a target="_blank" rel="noopener" href="https://home.cnblogs.com/u/xue-jie">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="home" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">home</div>
-                </div>
-            </a>
-            
-            <a href="/about">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="Diary" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">about</div>
-                </div>
-            </a>
-            
-            <a href="/archives">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="Film" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">archives</div>
-                </div>
-            </a>
-            
-            <a href="/like/categories">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="book" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">categories</div>
-                </div>
-            </a>
-            
-            <a href="/like/tags">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="tags" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">tags</div>
-                </div>
-            </a>
-            
-            <a target="_blank" rel="noopener" href="https://en.korilin.com">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="compass" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">英文博客</div>
-                </div>
-            </a>
-            
-        </div>
-        <div class="curtain" v-show="menu_show"></div>
-    </div>
-
-</nav>
-                </div>
-
-                <div id="main">
-                    <div id="home-head" style=background-image:url('home.jpg')>
-    <script>
-        var menu = document.getElementById("menu")
-        menu.className += " menu-color"
-    </script>
-     
-    <div id="home-info" class="home-info" @click="home_click">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Hexo</h1>
-                <h3></h3>
-                <h5></h5>
-            </div>
-        </span>
-    </div>
-     
+  </div>
 </div>
 
 
-
-<div id="home-posts-wrap" class=>
-    <div id="home-posts">
-
-        <div id="posts">
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
             
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
 
-<div class="post">
+    </nav>
+  </div>
+</header>
 
-    <a href="/2021/11/26/简的第一篇博客/">
-        <h2>
-            简的第一篇博客
-        </h2>
-    </a>
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <div class="category-and-date">
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/11/26/%E7%AE%80%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="title">简的第一篇博客</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-11-26T01:30:48.000Z" itemprop="datePublished">2021-11-26</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  <main class="main" role="main">
+  
+  
+    <div class="content">
+  <article id="post-简的第一篇博客" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/26/%E7%AE%80%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">简的第一篇博客</a>
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/11/26/%E7%AE%80%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="article-date">
+	  <time datetime="2021-11-26T01:30:48.000Z" itemprop="datePublished">2021-11-26</time>
+	</a>
+</span>
+        
+        
 
         
 
-        <span class="date">
-            <span class="icon">
-                <a-icon type="calendar" theme="filled" />
-            </span>
-            2021/11/26
-        </span>
-
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/11/26/%E7%AE%80%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
     </div>
-
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            
-            <p>呃___第一篇博客不知道要写啥  随便写写<br>关于学业——在疯狂阅读文献的基础上，对于我的研究方向稍微有了一点初步的想法，目前还在探索阶段。只能说科研啊，可真难！</p>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>呃___第一篇博客不知道要写啥  随便写写<br>关于学业——在疯狂阅读文献的基础上，对于我的研究方向稍微有了一点初步的想法，目前还在探索阶段。只能说科研啊，可真难！</p>
 <p>关于生活——刚拔了两颗智齿，拔的时候打麻药了，并不疼，麻药退后，那是真的疼，不过第二天就还可以了。这两天被饿的不轻，过几天再去把剩下两颗拔了。想说健健康康，真好！</p>
 <p>关于未来——想要跨行找计算机相关的工作（在工科的女生太惨了），近几个月来，抽空在接触前端知识，到目前略懂皮毛，像当时考研一样还在摸索阶段__加油啊，少年！</p>
 
-            
-        </div>
+      
     </div>
-
-    <div class="post-tags">
-        
-        
-    </div>
-
-    <a href="/2021/11/26/简的第一篇博客/ " class="go-post">
-        阅读全文
-    </a>
-</div>
-
-<div class="post">
-
-    <a href="/2021/11/26/hello-world/">
-        <h2>
-            Hello World
-        </h2>
-    </a>
-
-    <div class="category-and-date">
-
-        
-
-        <span class="date">
-            <span class="icon">
-                <a-icon type="calendar" theme="filled" />
-            </span>
-            2021/11/26
-        </span>
-
-    </div>
-
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-            
-        </div>
-    </div>
-
-    <div class="post-tags">
-        
-        
-    </div>
-
-    <a href="/2021/11/26/hello-world/ " class="go-post">
-        阅读全文
-    </a>
-</div>
-
-
-             
-<div class="page-current">
-
-    <div class="prev">
-        
-    </div>
-
-    <div class="page-index">
-
-        
-
-        <span class="current">
-            1
-        </span>
-
-        
-
-    </div>
-
-    <div class="next">
-        
-    </div>
-
-</div>
-
-        </div>
-    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
-    <div id="home-card">
-        <a-affix :offset-top="card_top">
-    <a-card class="card-style" style="width: 300px">
-        <div class="avatar">
-            <img src="images/avatar.png " alt="头像">
-        </div>
-        <div class="name">
-            John Doe
-        </div>
-        <div class="descriptions">
-            
-            <div class="description">
-                正しさなんてもの
-            </div>
-            
-            <div class="description">
-                人のモノサシによって変わる
-            </div>
-            
-        </div>
-        <div class="icon-links">
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/korilin">
-
-                    
-                    <a-icon type="github"
-                        theme="filled" />
-                    
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://twitter.com/korilin_dev">
-
-                    
-                    <a-icon type="twitter"
-                        theme="" />
-                    
-                </a>
-            </span>
-            
-        </div>
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://en.korilin.com">
-                    英文技术博客
-                </a>
-            </div>
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://jp.korilin.com">
-                    日语记录博客
-                </a>
-            </div>
-            
-        </div>
-    </a-card>
-</a-affix>
-    </div>
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2021/11/26/%E7%AE%80%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="简的第一篇博客" target="_blank" rel="external">http://example.com/2021/11/26/简的第一篇博客/</a>
+    </li>
     
-</div>
-                     
-<footer id="footer">
-    <div class="footer-wrap">
-        <div>
-            © 2018 - 2021 Hexo
-            <span class="footer-icon">
-                <a-icon type="flag" theme="filled" /></span>
-            @John Doe
-        </div>
-        <div></div>
-        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
-                target="_blank" rel="noopener" href="https://github.com/korilin/hexo-theme-particle">Particle Theme</a></div>
-        
-    </div>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">昵称</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+</div>
+
+  
+
+   
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
 </footer>
-
-<script src="/js/highlight.min.js"></script>
-<script src="/js/particle.js"></script>
-                </div>
-            </div>
-        </transition>
-    </div>
-
-    <script>
-    new Vue({
-        el: "#layout",
-        data: {
-            show_page: false,
-            onload_menu: false,
-            menu_show: false,
-            card_top: 100
-        },
-        created: function () {
-            var that = this
-            window.onload = function () {
-                that.show_page = true
-                document.getElementById("loadcontent").style.opacity = 0
-                setTimeout(function () {
-                    document.getElementById("loadleft").style.width = 0
-                    document.getElementById("loadright").style.width = 0
-                }, 300)
-                setTimeout(function () {
-                    document.getElementById("loading").style = "display:none"
-                }, 600)
-            }
-        },
-        mounted: function () {
-            var that = this
-            window.addEventListener('scroll', function (e) {
-                that.menu_show = false
-            })
-        },
-        methods: {
-            home_click: function () {
-                window.scrollTo({
-                    top: window.innerHeight - 80,
-                    behavior: "smooth",
-                });
-            }
-        }
-    })
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
 
-</body>
+<script src="/js/plugin.min.js"></script>
 
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+</body>
 </html>
